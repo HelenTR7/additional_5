@@ -8,7 +8,7 @@ module.exports = function check(str, bracketsConfig) {
     //alert("Nehetnoe kol-vo, skobki neverni");
     return false;
   }
-
+else{
 var s;
 var bracketsConfig2=[];
 bracketsConfig2=bracketsConfig;
@@ -53,7 +53,7 @@ for(var u=0;u<s;u++)
         else bool=false;
         
       }
-
+}
 }
     
 
