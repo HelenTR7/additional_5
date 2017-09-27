@@ -6,7 +6,7 @@ module.exports = function check(str, bracketsConfig) {
   if(((i+1)%2)==1)
   {
     //alert("Nehetnoe kol-vo, skobki neverni");
-    bool=false;
+    return false;
   }
 
 var s;
