@@ -2,10 +2,10 @@ module.exports = function check(str, bracketsConfig) {
   var bool=true;//значение ответа функции
   var i=str.length-1;
   i=+i;  
-  alert("V stroke simvolov:  "+(i+1));// длина строки
+  //alert("V stroke simvolov:  "+(i+1));// длина строки
   if(((i+1)%2)==1)
   {
-    alert("Nehetnoe kol-vo, skobki neverni");
+    //alert("Nehetnoe kol-vo, skobki neverni");
     bool=false;
   }
 
@@ -13,13 +13,13 @@ var s;
 var bracketsConfig2=[];
 bracketsConfig2=bracketsConfig;
 s=bracketsConfig2.length;
-alert("Dlina massiva proverki:  "+(s));
+//alert("Dlina massiva proverki:  "+(s));
 
  
   for(var j=0; j<(i/2-1);j++)
   {
   str=del(str, bracketsConfig, s, bool);
-  alert('New str:   '+str); 
+  //alert('New str:   '+str); 
   }
   
 ////////берем строку и удаляем правильные скобки///////////////////////////
