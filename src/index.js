@@ -1,14 +1,9 @@
 module.exports = function check(str, bracketsConfig) {
   var bool=true;//значение ответа функции
-  var i=str.length-1;
+  var i=str.length;
   i=+i;  
-  //alert("V stroke simvolov:  "+(i+1));// длина строки
-  if(((i+1)%2)==1)
-  {
-    //alert("Nehetnoe kol-vo, skobki neverni");
-    return false;
-  }
-else{
+  //alert("V stroke simvolov:  "+(i));// длина строки
+ 
 var s;
 var bracketsConfig2=[];
 bracketsConfig2=bracketsConfig;
@@ -16,15 +11,15 @@ s=bracketsConfig2.length;
 //alert("Dlina massiva proverki:  "+(s));
 
  
-  for(var j=0; j<(i/2-1);j++)
+  for(var j=0; j<(i/2);j++)
   {
-  str=del(str, bracketsConfig, s, bool);
+  str=del(str, bracketsConfig, s, i);
   //alert('New str:   '+str); 
   }
   
 ////////берем строку и удаляем правильные скобки///////////////////////////
 
-function del(str, bracketsConfig, s, bool)
+function del(str, bracketsConfig, s, i)
 {
 
 
@@ -53,7 +48,7 @@ for(var u=0;u<s;u++)
         else bool=false;
         
       }
-}
+
 }
     
 
@@ -67,11 +62,14 @@ return newstr;
 }
 ////////////////////////////////////////////////////////
 //return bool;
-
-if(str=="")
+//alert("Sodergimoe stroki: "+str);
+if(str==undefined)
 {
 return true;
+//alert("true");
 }
-else return false;
+else {return false;
+//alert("false");
+}
+}
 
-}
