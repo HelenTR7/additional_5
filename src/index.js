@@ -1,4 +1,5 @@
-module.exports = function check(str, bracketsConfig) {
+module.exports = function check(str, bracketsConfig) 
+{
   var bool=true;//значение ответа функции
   var i=str.length;
   i=+i;  
@@ -9,17 +10,21 @@ var bracketsConfig2=[];
 bracketsConfig2=bracketsConfig;
 s=bracketsConfig2.length;
 //alert("Dlina massiva proverki:  "+(s));
-
- 
-  for(var j=0; j<(i/2);j++)
+if(i%2==1)
   {
-  str=del(str, bracketsConfig, s, i);
+    //alert("Srazu otbrosili nehetno, false");
+    bool=false;
+} else{
+ 
+  for(var j=0; j<(i/2-1);j++)
+  {
+  str=del(str, bracketsConfig, s, i,bool);
   //alert('New str:   '+str); 
   }
   
 ////////берем строку и удаляем правильные скобки///////////////////////////
 
-function del(str, bracketsConfig, s, i)
+function del(str, bracketsConfig, s, i,bool)
 {
 
 
@@ -45,17 +50,20 @@ for(var u=0;u<s;u++)
           var re = podmass_str;
           var newstr = str.replace(re, '');//удаляем найденные скобки
         }
-        else bool=false;
-        
+        else 
+          { 
+            if(elem_hvost=='')
+            {
+            //alert("NAtknulis na PUSTOTY, false");
+            bool=false;
+          }
+          }
+
+                 
       }
 
 }
     
-
-
-
-
-
   }
  
 return newstr;
@@ -63,13 +71,21 @@ return newstr;
 ////////////////////////////////////////////////////////
 //return bool;
 //alert("Sodergimoe stroki: "+str);
-if(str==undefined)
-{
-return true;
-//alert("true");
-}
-else {return false;
-//alert("false");
-}
+ for(var i=0;i<s;i++)
+ {
+  if(str.charAt(0)==bracketsConfig[i][1])
+  {
+    //alert("pervi zakr skobka");
+   bool=false;
+  }
+
+ }
+ if(str==undefined)
+  {
+    //alert("raznie skobki");
+    bool=false;
+  }
+return bool;
 }
 
+}
